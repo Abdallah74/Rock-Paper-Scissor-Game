@@ -1,0 +1,121 @@
+:root {
+  --main-color: #7d2ae8;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f6f7fb;
+}
+
+.container {
+  padding: 2rem 7rem;
+  background-color: #fff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 14px;
+  -webkit-border-radius: 14px;
+  -moz-border-radius: 14px;
+  -ms-border-radius: 14px;
+  -o-border-radius: 14px;
+}
+.container.start .user_result {
+  transform-origin: left;
+  animation: userShake 0.7s ease infinite;
+  -webkit-animation: userShake 0.7s ease infinite;
+  -moz-animation: userShake 0.7s ease infinite;
+  -ms-animation: userShake 0.7s ease infinite;
+  -o-animation: userShake 0.7s ease infinite;
+}
+@keyframes userShake {
+  50% {
+    transform: rotate(10deg);
+    -webkit-transform: rotate(10deg);
+    -moz-transform: rotate(10deg);
+    -ms-transform: rotate(10deg);
+    -o-transform: rotate(10deg);
+  }
+}
+.container.start .cpu_result {
+  transform-origin: right;
+  animation: cpuShake 0.7s ease infinite;
+  -webkit-animation: cpuShake 0.7s ease infinite;
+  -moz-animation: cpuShake 0.7s ease infinite;
+  -ms-animation: cpuShake 0.7s ease infinite;
+  -o-animation: cpuShake 0.7s ease infinite;
+}
+@keyframes cpuShake {
+  50% {
+    transform: rotate(-10deg);
+    -webkit-transform: rotate(-10deg);
+    -moz-transform: rotate(-10deg);
+    -ms-transform: rotate(-10deg);
+    -o-transform: rotate(-10deg);
+  }
+}
+.result_img {
+  display: flex;
+  gap: 0 4rem;
+}
+.result_img img {
+  width: 100px;
+}
+.cpu_result img {
+  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+}
+.result {
+  text-align: center;
+  font-size: 2rem;
+  color: var(--main-color);
+  margin-top: 1.5rem;
+}
+.options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2.5rem;
+}
+.container.start .options {
+  pointer-events: none;
+}
+.options img {
+  width: 50px;
+  transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+}
+.option {
+  opacity: 0.5;
+  text-align: center;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  -webkit-transition: opacity 0.3s ease;
+  -moz-transition: opacity 0.3s ease;
+  -ms-transition: opacity 0.3s ease;
+  -o-transition: opacity 0.3s ease;
+}
+.option:hover {
+  opacity: 1;
+}
+.option.active {
+  opacity: 1;
+}
+.option p {
+  color: var(--main-color);
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
